@@ -1,0 +1,27 @@
+{
+  "workbench.colorTheme": "Rosé Pine",
+  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "workbench.settings.applyToAllProfiles": [],
+  "vim.useSystemClipboard": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.lineNumbers": "relative",
+  "vim.smartRelativeLine": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.linux": {},
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "workbench.iconTheme": "file-icons",
+  "window.menuBarVisibility": "toggle",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
+}
