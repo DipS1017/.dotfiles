@@ -18,5 +18,6 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 PATH=~/.console-ninja/.bin:$PATH
+export PATH="$PATH:$HOME/go/bin"
 
 eval "$(starship init bash)"
