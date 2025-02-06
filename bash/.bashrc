@@ -14,7 +14,7 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 #open with tmux
-# alias nvim='tmux new-session -s nvim -n nvim -c "$PWD" "nvim"'
+alias nvim='[ -z "$TMUX" ] && tmux new-session -s nvim -n nvim -c "$PWD" "nvim" || nvim'
 . "$HOME/.cargo/env"
 
 PATH=~/.console-ninja/.bin:$PATH

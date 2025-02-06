@@ -49,6 +49,10 @@ return {
       lspconfig.gopls.setup({
         capabilities = capabilities,
 
+        lspconfig.sqlformat.setup({
+          capabilities = capabilities,
+        }),
+
         settings = {
           gopls = {
             completeUnimported = true,
