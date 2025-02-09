@@ -21,3 +21,4 @@ PATH=~/.console-ninja/.bin:$PATH
 export PATH="$PATH:$HOME/go/bin"
 
 eval "$(starship init bash)"
+screenfetch
