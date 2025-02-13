@@ -9,7 +9,7 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
-vim.opt.breakindent=true
+vim.opt.breakindent = true
 
 vim.opt.wrap = false
 vim.opt.laststatus = 0
@@ -38,8 +38,8 @@ vim.opt.updatetime = 50
 vim.keymap.set("n", "<A-l>", "5zl")
 
 vim.keymap.set("n", "<A-h>", "5zh")
-vim.keymap.set("n","<A-j>",":m .+1<CR>==")
-vim.keymap.set("n","<A-k>",":m .-2<CR>==")
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 
 -- Visual mode: Move selected lines down
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
@@ -47,17 +47,24 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" 
 -- Visual mode: Move selected lines up
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
-
-vim.keymap.set('n', '<leader>q', function()
+vim.keymap.set("n", "<leader>q", function()
   -- Check if there are unsaved changes
   if vim.bo.modified then
     local choice = vim.fn.confirm("You have unsaved changes. Do you want to save them?", "&Yes\n&No\n&Cancel", 2)
     if choice == 1 then
-      vim.cmd('wq')  -- Save and quit
+      vim.cmd("wq") -- Save and quit
     elseif choice == 2 then
-      vim.cmd('q!')  -- Quit without saving
+      vim.cmd("q!") -- Quit without saving
     end
   else
-    vim.cmd('q')  -- Quit if no changes
+    vim.cmd("q") -- Quit if no changes
   end
-end, { desc = 'Quit with save prompt' })
+end, { desc = "Quit with save prompt" })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = "NoiceFormatProgressDone", -- see `:highlight` for more options
+      timeout = 200,
+    })
+  end,
+})
