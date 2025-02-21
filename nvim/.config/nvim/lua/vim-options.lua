@@ -63,7 +63,7 @@ end, { desc = "Quit with save prompt" })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({
-      higroup = "NoiceFormatProgressDone", -- see `:highlight` for more options
+      higroup = "IncSearch", -- see `:highlight` for more options
       timeout = 200,
     })
   end,

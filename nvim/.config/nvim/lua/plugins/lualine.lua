@@ -5,7 +5,8 @@ return {
     require("lualine").setup({
       options = {
         -- theme = "fluoromachine",
-        theme = "everforest",
+        -- theme = "everforest",
+        theme = "base16",
       },
     })
   end,

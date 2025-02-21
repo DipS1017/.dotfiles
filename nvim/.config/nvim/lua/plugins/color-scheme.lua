@@ -1,22 +1,22 @@
 --[[ return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup({
-				style = "dark", -- You can keep your preferred style
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("tokyonight").setup({
+        style = "dark",     -- You can keep your preferred style
 
-				transparent = true, -- Disable transparency
-				terminal_colors = true, -- Ensure terminal colors are used
-				styles = {
-					sidebars = "dark", -- Adjust other styles as needed
-					floats = "dark",
-				},
-			})
-			vim.cmd("colorscheme tokyonight-night")
-		end,
-	},
+        transparent = true, -- Disable transparency
+        terminal_colors = true, -- Ensure terminal colors are used
+        styles = {
+          sidebars = "dark", -- Adjust other styles as needed
+          floats = "dark",
+        },
+      })
+      vim.cmd("colorscheme tokyonight-night")
+    end,
+  },
 } ]]
 
 --[[ return {
@@ -82,7 +82,7 @@ return {
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
-} ]]
+}
 --[[    return {
 	"navarasu/onedark.nvim",
 	config = function()
