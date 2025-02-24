@@ -14,6 +14,11 @@ return {
       { "<Leader>4",  "<Cmd>BufferLineGoToBuffer 4<CR>", desc = "Go to tab 4" },
       { "<Leader>bn", "<Cmd>tabnew<CR>",                 desc = "Open new tab" }, -- Open new tab
       { "<Leader>bd", "<Cmd>bdelete<CR>",                desc = "Close current buffer" },
+      {
+        "<Leader>ba",
+        "<Cmd>%bdelete|e#|bd#<CR>",
+        desc = "Close current buffer and switch to previous",
+      },
     },
     opts = {
       options = {

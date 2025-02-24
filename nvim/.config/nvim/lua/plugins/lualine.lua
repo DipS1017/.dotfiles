@@ -6,7 +6,8 @@ return {
       options = {
         -- theme = "fluoromachine",
         -- theme = "everforest",
-        theme = "base16",
+        -- theme = "base16",
+        theme = "auto",
       },
     })
   end,
