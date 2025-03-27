@@ -31,6 +31,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         if client.supports_method("textDocument/codeAction") then
           local function apply_code_action(only)
+            local filetype = vim.bo.filetype
+            if filetype == "typescriptreact" or filetype == "javascriptreact" then
+              return
+            end
             local actions = vim.lsp.buf.code_action({
               ---@diagnostic disable-next-line
               context = { only = only },
