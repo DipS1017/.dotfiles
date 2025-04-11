@@ -12,45 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 require("lazy").setup("plugins")
--- format on save
--- format on save
--- vim.opt.termguicolors=true
+-- note: the order of above plugins shouldn't be changed
+
+-- Load custom modules
+require("myconfig.quit-confirm")
+
+local lsp_on_attach = require("myconfig.on-save")
+
 vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if not client then
-      return
-    end
-
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = args.buf,
-      callback = function()
-        if client.supports_method("textDocument/formatting") then
-          vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-        end
-
-        if client.supports_method("textDocument/codeAction") then
-          local function apply_code_action(only)
-            local filetype = vim.bo.filetype
-            if filetype == "typescriptreact" or filetype == "javascriptreact" then
-              return
-            end
-            local actions = vim.lsp.buf.code_action({
-              ---@diagnostic disable-next-line
-              context = { only = only },
-              apply = true,
-              return_actions = true,
-            })
-            -- only apply if code action is available
-            if actions and #actions > 0 then
-              ---@diagnostic disable-next-line
-              vim.lsp.buf.code_action({ context = { only = only }, apply = true })
-            end
-          end
-          apply_code_action({ "source.fixAll" })
-          apply_code_action({ "source.organizeImports" })
-        end
-      end,
-    })
-  end,
+  callback = lsp_on_attach.on_attach,
 })

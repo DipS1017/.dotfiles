@@ -47,23 +47,10 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" 
 -- Visual mode: Move selected lines up
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
-vim.keymap.set("n", "<leader>q", function()
-  -- Check if there are unsaved changes
-  if vim.bo.modified then
-    local choice = vim.fn.confirm("You have unsaved changes. Do you want to save them?", "&Yes\n&No\n&Cancel", 2)
-    if choice == 1 then
-      vim.cmd("wq") -- Save and quit
-    elseif choice == 2 then
-      vim.cmd("q!") -- Quit without saving
-    end
-  else
-    vim.cmd("q") -- Quit if no changes
-  end
-end, { desc = "Quit with save prompt" })
-vim.api.nvim_create_autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd("textyankpost", {
   callback = function()
     vim.highlight.on_yank({
-      higroup = "IncSearch", -- see `:highlight` for more options
+      higroup = "incsearch", -- see `:highlight` for more options
       timeout = 200,
     })
   end,
