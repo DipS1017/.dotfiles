@@ -17,6 +17,7 @@ require("lazy").setup("plugins")
 -- Load custom modules
 require("myconfig.quit-confirm")
 
+-- on save formats and perform code actions
 local lsp_on_attach = require("myconfig.on-save")
 
 vim.api.nvim_create_autocmd("LspAttach", {
