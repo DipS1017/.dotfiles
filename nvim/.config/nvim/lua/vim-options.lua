@@ -31,8 +31,8 @@ vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>w", ":update<Return>", { silent = true }) -- Saves the file if changed
-vim.keymap.set("n", "<leader>q", ":quit<Return>", { silent = true })   -- Quits the current window
-vim.keymap.set("n", "<leader>Q", ":qa<Return>", { silent = true })     -- Quits all windows
+vim.keymap.set("n", "<leader>q", ":quit<Return>", { silent = true }) -- Quits the current window
+vim.keymap.set("n", "<leader>Q", ":qa<Return>", { silent = true }) -- Quits all windows
 vim.opt.updatetime = 50
 
 vim.keymap.set("n", "<A-l>", "5zl")
@@ -46,12 +46,3 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" 
 
 -- Visual mode: Move selected lines up
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
-
-vim.api.nvim_create_autocmd("textyankpost", {
-  callback = function()
-    vim.highlight.on_yank({
-      higroup = "incsearch", -- see `:highlight` for more options
-      timeout = 200,
-    })
-  end,
-})

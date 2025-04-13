@@ -16,6 +16,7 @@ require("lazy").setup("plugins")
 
 -- Load custom modules
 require("myconfig.quit-confirm")
+require("myconfig.yank").setup_highlight_yank()
 
 -- on save formats and perform code actions
 local lsp_on_attach = require("myconfig.on-save")

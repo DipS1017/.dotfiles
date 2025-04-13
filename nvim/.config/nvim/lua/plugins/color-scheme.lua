@@ -24,7 +24,7 @@ return {
   config = function()
     require("nightfox").setup({
       options = {
-        transparent = true,     -- Disable background color
+        transparent = true, -- Disable background color
         terminal_colors = true, -- Enable terminal colors
       },
     })
@@ -66,7 +66,7 @@ return {
         overrides = function(colors) -- add/modify highlights
           return {}
         end,
-        theme = "dragon", -- load "wave" theme when 'background' option is not set
+        theme = "wave", -- load "wave" theme when 'background' option is not set
         background = { -- map the value of 'background' option to a theme
           dark = "wave", -- try "dragon" !
           light = "lotus",
@@ -103,14 +103,14 @@ return {
     -- lua
     require("onedark").setup({
       -- main options --
-      style = "cool",               -- default theme style. choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-      transparent = true,           -- show/hide background
-      term_colors = true,           -- change terminal color as per the selected theme style
-      ending_tildes = false,        -- show the end-of-buffer tildes. by default they are hidden
+      style = "warmer",          -- default theme style. choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+      transparent = true,        -- show/hide background
+      term_colors = true,        -- change terminal color as per the selected theme style
+      ending_tildes = false,     -- show the end-of-buffer tildes. by default they are hidden
       cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
       -- toggle theme style ---
-      toggle_style_key = nil,                                                              -- keybind to toggle theme style. leave it nil to disable it, or set it to a string, for example "<leader>ts"
+      toggle_style_key = nil,                                                           -- keybind to toggle theme style. leave it nil to disable it, or set it to a string, for example "<leader>ts"
       toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- list of styles to toggle between
 
       -- change code style ---
@@ -130,13 +130,13 @@ return {
       },
 
       -- custom highlights --
-      colors = {},     -- override default colors
+      colors = {},  -- override default colors
       highlights = {}, -- override highlight groups
 
       -- plugins config --
       diagnostics = {
-        darker = true,     -- darker colors for diagnostic
-        undercurl = true,  -- use undercurl instead of underline for diagnostics
+        darker = true, -- darker colors for diagnostic
+        undercurl = true, -- use undercurl instead of underline for diagnostics
         background = true, -- use background color for virtual text
       },
     })
@@ -160,7 +160,6 @@ return {
           comment = { italic = true },
           string = { italic = true },
           keyword = { italic = true },
-          function = { italic = true },
         },
       })
       -- apply the colorscheme
@@ -169,20 +168,20 @@ return {
   },
 } ]]
 --[[ return {
-  {
-    "maxmx03/fluoromachine.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      local fm = require("fluoromachine")
+	{
+		"maxmx03/fluoromachine.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			local fm = require("fluoromachine")
 
-      fm.setup({
-        glow = false,
-        theme = "fluoromachine",
-        transparent = true,
-      })
+			fm.setup({
+				glow = false,
+				theme = "fluoromachine",
+				transparent = true,
+			})
 
-      vim.cmd.colorscheme("fluoromachine")
-    end,
-  },
+			vim.cmd.colorscheme("fluoromachine")
+		end,
+	},
 } ]]

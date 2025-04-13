@@ -11,6 +11,16 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
+      ensure_installed = {
+        "ts_ls",
+        "tailwindcss",
+        "html",
+        "lua_ls",
+        "eslint",
+        "pyright",
+        "gopls",
+        "cssls",
+      },
     },
   },
   {
@@ -41,9 +51,6 @@ return {
         capabilities = capabilities,
       })
       lspconfig.pyright.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.omnisharp.setup({
         capabilities = capabilities,
       })
       lspconfig.gopls.setup({
