@@ -45,4 +45,6 @@ alias tvim='tmux new-session  -s nvim "nvim"'
 # Load Rust environment (Cargo)
 . "$HOME/.cargo/env"
 
+PATH="$PATH":"$HOME/.local/scripts/"
+bindkey -s ^f "tmux-sessionizer\n"
 export PATH="$PATH:$HOME/go/bin"
