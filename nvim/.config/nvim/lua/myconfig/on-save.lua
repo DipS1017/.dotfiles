@@ -16,7 +16,6 @@ M.on_attach = function(args)
           or filetype == "javascript"
           or filetype == "javascriptreact"
       then
-        vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
         return
       end
       if client.supports_method("textDocument/formatting") then
