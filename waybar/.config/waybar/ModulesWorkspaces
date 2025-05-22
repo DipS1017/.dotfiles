@@ -6,7 +6,7 @@
 
 {
 // CIRCLES Style
-"hyprland/workspaces": {
+"hyprland/workspaces#circle": {
 	"active-only": true,
 	"all-outputs": true,
 	"format": "{icon}",
@@ -166,7 +166,8 @@
 	},
 },
 // NUMBERS and ICONS style with window rewrite 
-"hyprland/workspaces#rw": {
+//this is my default workspace 
+"hyprland/workspaces": {
 	"disable-scroll": true,
 	"all-outputs": true,
 	"warp-on-scroll": false,
