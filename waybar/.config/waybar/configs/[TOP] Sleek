@@ -28,7 +28,7 @@
 "modules-center": [
 	"idle_inhibitor",
 	"custom/separator#blank",
-	"clock#3",
+	"clock",
 	"custom/separator#blank",
 	"group/notify"
 ],
@@ -38,6 +38,7 @@
 	"custom/separator#blank_2",
 	"pulseaudio",
 	"custom/separator#blank",
+"battery",
 	"custom/power",					
 	],
 }
