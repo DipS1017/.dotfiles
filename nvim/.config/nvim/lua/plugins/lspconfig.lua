@@ -17,7 +17,7 @@ return {
         "html",
         "lua_ls",
         "eslint",
-        "pyright",
+        "pylsp",
         "gopls",
         "cssls",
       },
@@ -55,8 +55,22 @@ return {
       lspconfig.eslint.setup({
         capabilities = capabilities,
       })
-      lspconfig.pyright.setup({
+      lspconfig.pylsp.setup({
         capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = { "E501" }, -- disable line-too-long warning
+                maxLineLength = 100, -- optional: allow longer lines
+              },
+            },
+          },
+        },
       })
       lspconfig.gopls.setup({
         capabilities = capabilities,
