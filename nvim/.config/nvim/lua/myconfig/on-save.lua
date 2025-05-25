@@ -11,10 +11,11 @@ M.on_attach = function(args)
     callback = function()
       local filetype = vim.bo.filetype
       if
-          filetype == "typescript"
-          or filetype == "typescriptreact"
-          or filetype == "javascript"
-          or filetype == "javascriptreact"
+      --[[ 	filetype == "typescript"
+				or filetype == "typescriptreact"
+				or filetype == "javascript"
+				or filetype == "javascriptreact" ]]
+          filetype == "sql"
       then
         return
       end
