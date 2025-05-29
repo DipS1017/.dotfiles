@@ -25,6 +25,7 @@
 	"custom/menu",
 	"custom/separator#blank",
 	"custom/separator#line",
+  "tray",
 	],
 
 "modules-center": [
@@ -34,14 +35,14 @@
 	"custom/separator#line",
 	"hyprland/workspaces#circle",
 	"custom/separator#dot-line",
+
 	"idle_inhibitor",	
 	], 
 
 "modules-right": [
+  "battery",
 	"custom/separator#line",
-	"tray",
-	"mpris", 
-	"group/audio",
+  "pulseaudio",
 	"custom/separator#line",
 	"custom/power",
 	],
