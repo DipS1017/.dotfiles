@@ -29,17 +29,16 @@
 	],
 
 "modules-center": [
-	"group/notify",
+  "clock",
 	"custom/separator#dot-line",
-	"clock",
-	"custom/separator#line",
-	"hyprland/workspaces#circle",
-	"custom/separator#dot-line",
+  "custom/separator#dot-line",
+  "custom/separator#line",
+  "hyprland/workspaces",
 
-	"idle_inhibitor",	
 	], 
 
 "modules-right": [
+  "group/notify",
   "battery",
 	"custom/separator#line",
   "pulseaudio",
