@@ -25,7 +25,7 @@
   font-weight: bold;
   min-height: 0;
   /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-  font-size: 100%;
+  font-size: 99%;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
@@ -38,7 +38,7 @@ window#waybar {
 }
 
 window#waybar.hidden {
-  opacity: 0.1;
+  opacity: 0.5;
 }
 
 tooltip {
@@ -160,12 +160,10 @@ tooltip {
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-}
+.modules-left>widget:first-child>#workspaces {}
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-}
+.modules-right>widget:last-child>#workspaces {}
 
 #clock {
   color: @accent2;
