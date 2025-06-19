@@ -19,7 +19,7 @@
   },
 } ]]
 
---[[ return {
+return {
   "EdenEast/nightfox.nvim",
   config = function()
     require("nightfox").setup({
@@ -31,7 +31,7 @@
     vim.cmd("colorscheme duskfox") -- Set the colorscheme
   end,
 }
- ]]
+
 --[[ return {
   {
     "craftzdog/solarized-osaka.nvim",
@@ -44,7 +44,7 @@
   },
 } ]]
 
-return {
+--[[ return {
 	"rebelot/kanagawa.nvim",
 	config = function()
 		require("kanagawa").setup({
@@ -76,7 +76,7 @@ return {
 		-- setup must be called before loading
 		vim.cmd("colorscheme kanagawa")
 	end,
-}
+} ]]
 
 --[[ return {
 	{
