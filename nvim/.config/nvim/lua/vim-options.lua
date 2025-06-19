@@ -20,6 +20,7 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
+vim.opt.cursorline = true
 
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
@@ -31,8 +32,8 @@ vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>w", ":update<Return>", { silent = true }) -- Saves the file if changed
-vim.keymap.set("n", "<leader>q", ":quit<Return>", { silent = true }) -- Quits the current window
-vim.keymap.set("n", "<leader>Q", ":qa<Return>", { silent = true }) -- Quits all windows
+vim.keymap.set("n", "<leader>q", ":quit<Return>", { silent = true })   -- Quits the current window
+vim.keymap.set("n", "<leader>Q", ":qa<Return>", { silent = true })     -- Quits all windows
 vim.opt.updatetime = 50
 
 vim.keymap.set("n", "<A-l>", "5zl")
@@ -48,18 +49,18 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" 
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-	severity_sort = true,
-	float = {
-		style = "minimal",
-		source = "always", -- Or "if_many"
-		border = "rounded",
-		header = "",
-		prefix = "",
-	},
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+  float = {
+    style = "minimal",
+    source = "always", -- Or "if_many"
+    border = "rounded",
+    header = "",
+    prefix = "",
+  },
 })
 
 vim.opt.winborder = "rounded"
