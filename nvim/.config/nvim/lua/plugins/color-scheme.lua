@@ -1,4 +1,4 @@
---[[ return {
+return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -6,7 +6,6 @@
     config = function()
       require("tokyonight").setup({
         style = "dark",     -- you can keep your preferred style
-
         transparent = true, -- disable transparency
         terminal_colors = true, -- ensure terminal colors are used
         styles = {
@@ -17,21 +16,21 @@
       vim.cmd("colorscheme tokyonight-night")
     end,
   },
-} ]]
-
+}
+--[[
 return {
   "EdenEast/nightfox.nvim",
   config = function()
     require("nightfox").setup({
       options = {
-        transparent = true, -- Disable background color
+        transparent = false, -- Disable background color
         terminal_colors = true, -- Enable terminal colors
       },
     })
     vim.cmd("colorscheme duskfox") -- Set the colorscheme
   end,
 }
-
+ ]]
 --[[ return {
   {
     "craftzdog/solarized-osaka.nvim",
@@ -77,26 +76,26 @@ return {
 		vim.cmd("colorscheme kanagawa")
 	end,
 } ]]
+--[[
+return {
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        transparent_background = false,
+        -- term_colors = true,
+        integrations = {
+          -- add integrations for plugins if needed
+        },
+      })
+      vim.cmd.colorscheme("catppuccin-mocha")
+    end,
+  },
+} ]]
 
---[[ return {
-	{
-		"catppuccin/nvim",
-		lazy = false,
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				transparent_background = true,
-				-- term_colors = true,
-				integrations = {
-					-- add integrations for plugins if needed
-				},
-			})
-			vim.cmd.colorscheme("catppuccin-mocha")
-		end,
-	},
-}
---]]
 --[[ return {
   "navarasu/onedark.nvim",
   config = function()
