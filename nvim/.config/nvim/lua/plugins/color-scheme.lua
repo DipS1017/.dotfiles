@@ -1,21 +1,21 @@
 return {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("tokyonight").setup({
-        style = "dark",     -- you can keep your preferred style
-        transparent = true, -- disable transparency
-        terminal_colors = true, -- ensure terminal colors are used
-        styles = {
-          sidebars = "dark", -- adjust other styles as needed
-          floats = "dark",
-        },
-      })
-      vim.cmd("colorscheme tokyonight-night")
-    end,
-  },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("tokyonight").setup({
+				style = "dark", -- you can keep your preferred style
+				transparent = true, -- disable transparency
+				terminal_colors = true, -- ensure terminal colors are used
+				styles = {
+					sidebars = "dark", -- adjust other styles as needed
+					floats = "dark",
+				},
+			})
+			vim.cmd("colorscheme tokyonight-night")
+		end,
+	},
 }
 --[[
 return {
@@ -41,8 +41,8 @@ return {
       vim.cmd("colorscheme solarized-osaka")
     end,
   },
-} ]]
-
+}
+ ]]
 --[[ return {
 	"rebelot/kanagawa.nvim",
 	config = function()
@@ -76,8 +76,8 @@ return {
 		vim.cmd("colorscheme kanagawa")
 	end,
 } ]]
---[[
-return {
+
+--[[ return {
   {
     "catppuccin/nvim",
     lazy = false,
@@ -85,7 +85,7 @@ return {
     priority = 1000,
     config = function()
       require("catppuccin").setup({
-        transparent_background = false,
+        transparent_background = true,
         -- term_colors = true,
         integrations = {
           -- add integrations for plugins if needed
