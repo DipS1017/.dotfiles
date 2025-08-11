@@ -45,7 +45,7 @@
 	},
 },
 // PACMAN Style
-"hyprland/workspaces#pacman": {
+"hyprland/workspaces": {
 	"active-only": false,
 	"all-outputs": true,
 	"format": "{icon}",
@@ -112,7 +112,7 @@
   },
   
 //  NUMBERS and ICONS style
-"hyprland/workspaces#4": {
+"hyprland/workspaces": {
 	"format": "{name}",
 	"format": " {name} {icon} ",
 	//"format": " {icon} ",

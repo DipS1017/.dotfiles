@@ -1,36 +1,34 @@
 return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup({
-				style = "dark", -- you can keep your preferred style
-				transparent = true, -- disable transparency
-				terminal_colors = true, -- ensure terminal colors are used
-				styles = {
-					sidebars = "dark", -- adjust other styles as needed
-					floats = "dark",
-				},
-			})
-			vim.cmd("colorscheme tokyonight-night")
-		end,
-	},
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("tokyonight").setup({
+        style = "dark",     -- you can keep your preferred style
+        transparent = true, -- disable transparency
+        terminal_colors = true, -- ensure terminal colors are used
+        styles = {
+          sidebars = "dark", -- adjust other styles as needed
+          floats = "dark",
+        },
+      })
+      vim.cmd("colorscheme tokyonight-night")
+    end,
+  },
 }
---[[
-return {
+--[[ return {
   "EdenEast/nightfox.nvim",
   config = function()
     require("nightfox").setup({
       options = {
-        transparent = false, -- Disable background color
+        transparent = true, -- Disable background color
         terminal_colors = true, -- Enable terminal colors
       },
     })
     vim.cmd("colorscheme duskfox") -- Set the colorscheme
   end,
-}
- ]]
+} ]]
 --[[ return {
   {
     "craftzdog/solarized-osaka.nvim",
