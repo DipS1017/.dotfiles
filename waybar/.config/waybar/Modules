@@ -390,6 +390,7 @@
 	],
 },
 
+
 "wlr/taskbar": {
 	"format": "{icon} {name}",
 	"icon-size": 16,
@@ -405,3 +406,4 @@
 		],
 },
 }
+

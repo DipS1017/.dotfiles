@@ -29,6 +29,7 @@
 	],
 
 "modules-center": [
+"custom/wl-gammarelay-temperature",
   "clock",
 	"custom/separator#dot-line",
   "hyprland/workspaces",

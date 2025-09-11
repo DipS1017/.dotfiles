@@ -36,6 +36,9 @@ vim.keymap.set("n", "<leader>q", ":quit<Return>", { silent = true })   -- Quits 
 vim.keymap.set("n", "<leader>Q", ":qa<Return>", { silent = true })     -- Quits all windows
 vim.opt.updatetime = 50
 
+-- Restart all attached LSP clients
+vim.keymap.set("n", "<leader>n", "<cmd>LspRestart<cr>", { desc = "Restart LSP workspace" })
+
 vim.keymap.set("n", "<A-l>", "5zl")
 
 vim.keymap.set("n", "<A-h>", "5zh")
