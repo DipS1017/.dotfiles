@@ -3,7 +3,7 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnosterzak"
+
 
 plugins=(
     git
@@ -24,6 +24,7 @@ pokemon-colorscripts --no-title -s -r | fastfetch -c $HOME/.config/fastfetch/con
 # fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 10 --logo-width 5 --logo -
 # fastfetch. Will be disabled if above colorscript was chosen to install
 #fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
+#fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc
 
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'
@@ -43,10 +44,12 @@ setopt appendhistory
 # Open Neovim in a new tmux session if not already in tmux
 alias tvim='tmux new-session  -s nvim "nvim"'
 # Load Rust environment (Cargo)
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
 bindkey '^I' autosuggest-accept
 
 PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 export PATH="$PATH:$HOME/go/bin"
+
+eval "$(starship init zsh)"
