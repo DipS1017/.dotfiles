@@ -1,23 +1,23 @@
---[[ return {
+return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
       require("tokyonight").setup({
-        style = "dark",     -- you can keep your preferred style
-        transparent = true, -- disable transparency
+        style = "dark",         -- you can keep your preferred style
+        transparent = true,     -- disable transparency
         terminal_colors = true, -- ensure terminal colors are used
         styles = {
-          sidebars = "dark", -- adjust other styles as needed
+          sidebars = "dark",    -- adjust other styles as needed
           floats = "dark",
         },
       })
       vim.cmd("colorscheme tokyonight-night")
     end,
   },
-} ]]
-return {
+}
+--[[ return {
   "EdenEast/nightfox.nvim",
   config = function()
     require("nightfox").setup({
@@ -28,7 +28,7 @@ return {
     })
     vim.cmd("colorscheme duskfox") -- Set the colorscheme
   end,
-}
+} ]]
 --[[ return {
   {
     "craftzdog/solarized-osaka.nvim",
@@ -149,7 +149,7 @@ return {
     config = function()
       -- optionally configure the colorscheme with italics enabled for certain syntax groups
       require("rose-pine").setup({
-        variant = "main", -- options: 'main', 'moon', 'dawn'
+        variant = "moon", -- options: 'main', 'moon', 'dawn'
         dark_variant = "main",
         disable_background = true,
         disable_float_background = true,

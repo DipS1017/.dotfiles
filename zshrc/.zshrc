@@ -39,7 +39,6 @@ source <(fzf --zsh)
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
 
 # Open Neovim in a new tmux session if not already in tmux
 alias tvim='tmux new-session  -s nvim "nvim"'
@@ -47,6 +46,7 @@ alias tvim='tmux new-session  -s nvim "nvim"'
 #. "$HOME/.cargo/env"
 
 bindkey '^I' autosuggest-accept
+
 
 PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
