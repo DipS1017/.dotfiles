@@ -1,4 +1,3 @@
-# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -47,9 +46,10 @@ alias tvim='tmux new-session  -s nvim "nvim"'
 
 bindkey '^I' autosuggest-accept
 
-
 PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 export PATH="$PATH:$HOME/go/bin"
+
+export PATH=$HOME/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
 
 eval "$(starship init zsh)"

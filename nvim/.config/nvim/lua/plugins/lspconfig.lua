@@ -19,6 +19,7 @@ return {
         "eslint",
         "pylsp",
         "gopls",
+        "intelephense",
         "cssls",
       },
     },
@@ -54,6 +55,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.jdtls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.intelephense.setup({
         capabilities = capabilities,
       })
       lspconfig.eslint.setup({
