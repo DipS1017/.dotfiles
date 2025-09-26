@@ -8,7 +8,17 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
+        -- JS/TS/React
+        null_ls.builtins.formatting.prettier.with({
+          condition = function(utils)
+            return utils.root_has_file({
+              ".prettierrc",
+              ".prettierrc.json",
+              "prettier.config.js",
+              "package.json",
+            })
+          end,
+        }),
         null_ls.builtins.diagnostics.erb_lint,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.pint,

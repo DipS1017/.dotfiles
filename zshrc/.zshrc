@@ -52,4 +52,7 @@ export PATH="$PATH:$HOME/go/bin"
 
 export PATH=$HOME/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
 
+
+# Avante private API keys
+[ -f ~/.config/avante/env ] && source ~/.config/avante/env
 eval "$(starship init zsh)"

@@ -67,3 +67,4 @@ vim.diagnostic.config({
 })
 
 vim.opt.winborder = "rounded"
+vim.g.lsp_config_enabled = true

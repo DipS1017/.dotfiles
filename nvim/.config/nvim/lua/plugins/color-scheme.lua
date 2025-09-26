@@ -1,4 +1,4 @@
-return {
+--[[ return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -16,7 +16,7 @@ return {
       vim.cmd("colorscheme tokyonight-night")
     end,
   },
-}
+} ]]
 --[[ return {
   "EdenEast/nightfox.nvim",
   config = function()
@@ -140,7 +140,7 @@ return {
     vim.cmd.colorscheme("onedark")
   end,
 } ]]
---[[ return {
+return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -149,9 +149,9 @@ return {
     config = function()
       -- optionally configure the colorscheme with italics enabled for certain syntax groups
       require("rose-pine").setup({
-        variant = "moon", -- options: 'main', 'moon', 'dawn'
+        variant = "main", -- options: 'main', 'moon', 'dawn'
         dark_variant = "main",
-        disable_background = true,
+        disable_background = false,
         disable_float_background = true,
         highlight_groups = {
           comment = { italic = true },
@@ -163,7 +163,7 @@ return {
       vim.cmd.colorscheme("rose-pine")
     end,
   },
-} ]]
+}
 --[[ return {
 	{
 		"maxmx03/fluoromachine.nvim",
