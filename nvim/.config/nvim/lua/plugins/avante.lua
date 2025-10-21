@@ -1,5 +1,5 @@
-return {
-  "yetone/avante.nvim",
+return {}
+--[[   "yetone/avante.nvim",
   event = "VeryLazy",
   lazy = false,
   version = false, -- always pull latest
@@ -90,4 +90,4 @@ return {
       ft = { "markdown", "Avante" },
     },
   },
-}
+} ]]

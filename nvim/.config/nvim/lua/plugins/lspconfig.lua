@@ -20,6 +20,7 @@ return {
         "pylsp",
         "gopls",
         "svelte",
+        "clangd",
         "intelephense",
         "cssls",
       },
@@ -74,6 +75,10 @@ return {
       }
 
       vim.lsp.config.eslint = {
+        capabilities = capabilities,
+      }
+
+      vim.lsp.config.clangd = {
         capabilities = capabilities,
       }
 

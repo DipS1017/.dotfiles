@@ -8,16 +8,16 @@ return {
   },
   config = function()
     -- Key mappings
-    vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree reveal toggle<CR>", {})
 
     -- Setup NeoTree
     require("neo-tree").setup({
-      close_if_last_window = true,                                    -- Close Neo-tree when the last instance is closed
-      popup_border_style = "rounded",                                 -- Rounded borders for popups
-      enable_git_status = true,                                       -- Enable Git status in the file tree
-      enable_diagnostics = true,                                      -- Enable diagnostics in the file tree
+      close_if_last_window = true,                                       -- Close Neo-tree when the last instance is closed
+      popup_border_style = "rounded",                                    -- Rounded borders for popups
+      enable_git_status = true,                                          -- Enable Git status in the file tree
+      enable_diagnostics = true,                                         -- Enable diagnostics in the file tree
       open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- File opening behavior
-      sort_case_insensitive = false,                                  -- Case-sensitive sorting
+      sort_case_insensitive = false,                                     -- Case-sensitive sorting
 
       default_component_configs = {
         container = {
