@@ -46,12 +46,19 @@ alias tvim='tmux new-session  -s nvim "nvim"'
 
 bindkey '^I' autosuggest-accept
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 export PATH="$PATH:$HOME/go/bin"
 
 export PATH=$HOME/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
 
+
+#export ANDROID_SDK_ROOT=/opt/android-sdk
+#export PATH=$PATH:/opt/android-sdk/platform-tools
+#export PATH=$PATH:/opt/android-sdk/emulator
+#export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin
 
 # Avante private API keys
 [ -f ~/.config/avante/env ] && source ~/.config/avante/env
