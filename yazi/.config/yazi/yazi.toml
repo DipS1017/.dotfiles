@@ -1,0 +1,8 @@
+[mgr]
+editor = "nvim"
+show_hidden = true
+
+
+
+[keymaps]
+open_terminal ="$SHELL"
