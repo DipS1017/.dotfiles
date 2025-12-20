@@ -1,4 +1,4 @@
---[[ return {
+return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -6,7 +6,7 @@
     config = function()
       require("tokyonight").setup({
         style = "dark",         -- you can keep your preferred style
-        transparent = true,     -- disable transparency
+        transparent = false,    -- disable transparency
         terminal_colors = true, -- ensure terminal colors are used
         styles = {
           sidebars = "dark",    -- adjust other styles as needed
@@ -16,7 +16,7 @@
       vim.cmd("colorscheme tokyonight-night")
     end,
   },
-} ]]
+}
 --[[ return {
   "EdenEast/nightfox.nvim",
   config = function()
@@ -41,7 +41,7 @@
   },
 }
  ]]
-return {
+--[[ return {
   "rebelot/kanagawa.nvim",
   config = function()
     require("kanagawa").setup({
@@ -73,7 +73,7 @@ return {
     -- setup must be called before loading
     vim.cmd("colorscheme kanagawa")
   end,
-}
+} ]]
 --
 --[[ return {
   {

@@ -92,8 +92,9 @@ return {
           pylsp = {
             plugins = {
               pycodestyle = {
-                ignore = { "E501" }, -- disable line-too-long warning
-                maxLineLength = 100, -- optional: allow longer lines
+                enable = false,
+                ignore = { 'E501', 'E231' },
+                maxLineLength = 88,
               },
             },
           },

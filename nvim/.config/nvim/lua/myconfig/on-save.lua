@@ -9,11 +9,12 @@ M.on_attach = function(args)
     callback = function()
       local filetype = vim.bo.filetype
       if
-      --[[ filetype == "typescript"
+          filetype == "typescript"
           or filetype == "typescriptreact"
           or filetype == "javascript"
-          or filetype == "javascriptreact" ]]
-          filetype == "sql"
+          or filetype == "javascriptreact"
+          or filetype == "sql"
+          or filetype == "html"
       then
         return
       end
@@ -23,14 +24,14 @@ M.on_attach = function(args)
       if client.supports_method("textDocument/codeAction") then
         local function apply_code_action(only)
           vim.lsp.buf.code_action({
-            context = { 
+            context = {
               only = only,
               diagnostics = vim.diagnostic.get(args.buf) -- Include diagnostics for missing imports
             },
             apply = true,
           })
         end
-        
+
         -- Add small delays to handle async operations
         vim.defer_fn(function()
           apply_code_action({ "source.fixAll" })

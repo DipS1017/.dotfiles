@@ -59,7 +59,16 @@ export PATH=$HOME/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
 #export PATH=$PATH:/opt/android-sdk/platform-tools
 #export PATH=$PATH:/opt/android-sdk/emulator
 #export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin
-
+export EDITOR='nvim'
+export VISUAL='nvim'
 # Avante private API keys
 [ -f ~/.config/avante/env ] && source ~/.config/avante/env
 eval "$(starship init zsh)"
+# yazi cd wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}

@@ -68,3 +68,7 @@ vim.diagnostic.config({
 
 vim.opt.winborder = "rounded"
 vim.g.lsp_config_enabled = true
+
+vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>", {
+  desc = "Restart all LSP clients",
+})
