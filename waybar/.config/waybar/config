@@ -1,0 +1,76 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 50,
+    "margin-top": 0,
+    "margin-bottom": 09,
+    "margin-left": 0,
+    "spacing": 0,
+    "exclusive": true,
+
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
+    "modules-center": ["clock"], 
+    "modules-right": ["bluetooth", "network", "pulseaudio",  "custom/power"],
+
+    "hyprland/workspaces": {
+        "orientation": "vertical",
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "default": "○",
+            "active": "●",
+            "urgent": "󱓻"
+        }
+    },
+"clock": {
+    "format": "{:%H\n%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+        "mode"          : "month",
+        "mode-mon-col"  : 3,
+        "on-scroll"     : 1,
+        "format": {
+            "months":     "<span color='#ffead3'><b>{}</b></span>",
+            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+    },
+    "actions": {
+        "on-click": "mode",        // Shows/Toggles calendar on left click
+        "on-click-right": "mode",  // Switch between month/year view
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+    }
+},
+
+    "bluetooth": { 
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        // Toggle logic: checks if blocked, then unblocks or blocks
+        "on-click": "rfkill list bluetooth | grep -q 'yes' && rfkill unblock bluetooth || rfkill block bluetooth",
+        "on-click-right": "blueman-manager" 
+    },
+
+ "network": { 
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor", // Left click also opens manager for convenience
+        "on-click-right": "nm-connection-editor" 
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout"
+    }
+}

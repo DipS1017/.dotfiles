@@ -1,0 +1,81 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    border: none;
+}
+
+window#waybar {
+    background-color: rgba(15, 15, 20, 0.85);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+/* Horizontal Centering */
+#custom-launcher, #workspaces button, #bluetooth, #pulseaudio, #network, #clock, #custom-power  {
+    min-width: 50px;
+    margin: 12px 0;
+    padding: 0;
+}
+
+#workspaces button { font-size: 15px; color: rgba(255, 255, 255, 0.2); }
+#workspaces button.active { color: #ffffff; }
+#bluetooth {
+    /* Increase this specifically until it matches the visual size of WiFi/Audio */
+    font-size: 25px; 
+    min-width: 30px;
+    margin: 12px 0;
+    transition: all 0.3s ease;
+}
+/* This part ensures the calendar grid is perfectly straight */
+tooltip {
+    background: rgba(15, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font"; /* MUST be a monospace font */
+    font-size: 14px;
+    color: #ffffff;
+    padding: 15px;
+}/* Specific Clock styling to ensure it's centered in the middle of the bar */
+#clock {
+    font-size: 14px;
+    font-weight: 900;
+    margin: 20px 0; /* Adjust this to push it to the exact middle */
+}
+
+/* Ensure the connected state stays the same size but changes color */
+#bluetooth.connected {
+    color: #007aff;
+    font-size: 30px;
+}
+
+#bluetooth.disabled {
+    color: rgba(255, 255, 255, 0.15);
+}#network {
+    font-size: 28px; /* Extra large icon */
+    color: rgba(255, 255, 255, 0.7);
+    min-width: 50px;
+    margin: 15px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Color states */
+#network.wifi, #network.ethernet {
+    color: #34c759;
+}
+
+#network.disconnected{ color: rgba(255, 255, 255, 0.15); }
+
+
+/* System Icons */
+#pulseaudio { font-size: 22px; color: rgba(255, 255, 255, 0.7); }
+#clock { font-size: 20px; font-weight: 900; }
+#custom-power { font-size: 24px; color: #f38ba8; }
+
+/* Click feedback */
+button:hover, #bluetooth:hover, #network:hover, #pulseaudio:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
