@@ -4,10 +4,10 @@
 }
 
 window#waybar {
-    background-color: rgba(251, 251, 252, 0.05);
+    background-color: rgba(0, 0, 0, 0.6);
 
-    border-top-right-radius: 22px;
-  border-bottom-right-radius: 22px;
+    border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #ffffff;
 }
@@ -15,6 +15,9 @@ window#waybar {
 
 /* Common sizing for all modules */
 #custom-launcher, 
+#custom-discord,
+#custom-slack,
+#custom-spotify,
 #workspaces button, 
 #bluetooth, 
 #network, 
@@ -31,12 +34,20 @@ window#waybar {
   font-size: 24px;
 }
 
+#custom-discord,
+#custom-slack,
+#custom-spotify {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 30px;
+    min-height: 30px;
+}
+
 /* Workspaces */
 #workspaces button { font-size: 15px; color: rgba(255, 255, 255, 0.2); }
 #workspaces button.active { color: #ffffff; }
 
 /* Clock */
-#clock { font-size: 20px; font-weight: 700; }
+#clock { font-size: 20px; font-weight: 600; }
 
 /* Bluetooth & Network */
 #bluetooth { font-size: 24px; transition: all 0.3s ease; }
@@ -64,7 +75,7 @@ window#waybar {
 #pulseaudio-slider highlight {
     min-width: 10px;
     border-radius: 5px;
-    background-color: #ff6699; /* Matches your calendar pink */
+    background-color: rgba(255, 255, 255, 0.8); /* Matches your calendar pink */
 }
 
 /* Hides the circular handle of the slider */
