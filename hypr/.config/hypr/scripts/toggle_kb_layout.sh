@@ -1,7 +1,13 @@
 
 #!/usr/bin/env bash
 layout_file="$HOME/.cache/kb_layout"
-settings_file="$HOME/.config/hypr/hyprland/input.conf"
+settings_file="$HOME/.config/hypr/conf/input.conf"
+notif_icon="$HOME/.config/swaync/icons/keyboard.png"
+
+if [ ! -f "$settings_file" ]; then
+    notify-send -u low -i "$notif_icon" "Keyboard Layout" "Missing config: $settings_file"
+    exit 1
+fi
 
 # Extract layouts and variants from input.conf
 layout_line=$(grep 'kb_layout' "$settings_file" | cut -d '=' -f2 | tr -d '[:space:]')
@@ -11,6 +17,12 @@ IFS=',' read -r -a layouts <<< "$layout_line"
 IFS=',' read -r -a variants <<< "$variant_line"
 
 layout_count=${#layouts[@]}
+
+# Guard against empty config
+if [ "$layout_count" -eq 0 ]; then
+    notify-send -u low -i "$notif_icon" "Keyboard Layout" "No kb_layout found in $settings_file"
+    exit 1
+fi
 
 # Read current index (default = 0)
 if [ -f "$layout_file" ]; then
