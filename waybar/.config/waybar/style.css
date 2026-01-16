@@ -1,19 +1,26 @@
+
+/* ==============================
+   Global Styles
+   ============================== */
 * {
     font-family: "Comic Mono", sans-serif;
     border: none;
 }
 
+/* ==============================
+   Waybar Container
+   ============================== */
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.6);
-
+    background-color: rgba(0, 0, 0, 0.4);
     border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+    border-bottom-right-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #ffffff;
 }
 
-
-/* Common sizing for all modules */
+/* ==============================
+   Common Module Sizing
+   ============================== */
 #custom-launcher, 
 #custom-discord,
 #custom-slack,
@@ -29,11 +36,17 @@ window#waybar {
     margin: 12px 0;
     padding: 0;
 }
-#custom-menu { 
-    color: #89b4fa; /* A fresh mint color, or use #f38ba8 to keep the red */
-  font-size: 24px;
+
+/* ==============================
+   Custom Menu
+   ============================== */
+#custom-menu {
+    font-size: 30px;
 }
 
+/* ==============================
+   Custom App Icons (Discord, Slack, Spotify)
+   ============================== */
 #custom-discord,
 #custom-slack,
 #custom-spotify {
@@ -42,22 +55,47 @@ window#waybar {
     min-height: 30px;
 }
 
-/* Workspaces */
-#workspaces button { font-size: 15px; color: rgba(255, 255, 255, 0.2); }
-#workspaces button.active { color: #ffffff; }
+/* ==============================
+   Workspaces
+   ============================== */
+#workspaces button {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.2);
+}
 
-/* Clock */
-#clock { font-size: 20px; font-weight: 600; }
+#workspaces button.active {
+    color: #ffffff;
+}
 
-/* Bluetooth & Network */
-#bluetooth { font-size: 24px; transition: all 0.3s ease; }
-#bluetooth.connected { color: #007aff; }
-#network { font-size: 24px; color: #34c759; }
-#network.disconnected { color: rgba(255, 255, 255, 0.15); }
+/* ==============================
+   Clock
+   ============================== */
+#clock {
+    font-size: 20px;
+    font-weight: 600;
+}
 
-/* Volume Group & Slider Styling */
+/* ==============================
+   Bluetooth & Network
+   ============================== */
+#bluetooth {
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+
+#network {
+    font-size: 30px;
+}
+
+#network.disconnected {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* ==============================
+   PulseAudio (Volume) Slider
+   ============================== */
 #pulseaudio {
-    font-size: 24px;
+    font-size: 30px;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -75,20 +113,26 @@ window#waybar {
 #pulseaudio-slider highlight {
     min-width: 10px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8); /* Matches your calendar pink */
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Hides the circular handle of the slider */
 #pulseaudio-slider slider {
     min-height: 0;
     min-width: 0;
-    opacity: 0;
+    opacity: 0; /* Hides circular handle */
 }
 
-/* Power Button */
-#custom-power { font-size: 24px; color: #f38ba8; }
+/* ==============================
+   Power Button
+   ============================== */
+#custom-power {
+    font-size: 24px;
+    color: #f38ba8;
+}
 
-/* Tooltip Styling */
+/* ==============================
+   Tooltips
+   ============================== */
 tooltip {
     background: rgba(15, 15, 20, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -101,8 +145,14 @@ tooltip label {
     padding: 10px;
 }
 
-/* Hover effects */
-button:hover, #bluetooth:hover, #network:hover, #pulseaudio:hover {
+/* ==============================
+   Hover Effects
+   ============================== */
+button:hover,
+#bluetooth:hover,
+#network:hover,
+#pulseaudio:hover {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
 }
+

@@ -6,7 +6,7 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "dark",         -- you can keep your preferred style
-        transparent = true,     -- disable transparency
+        transparent = false,    -- disable transparency
         terminal_colors = true, -- ensure terminal colors are used
         styles = {
           sidebars = "dark",    -- adjust other styles as needed
