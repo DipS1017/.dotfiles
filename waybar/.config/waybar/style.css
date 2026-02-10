@@ -12,9 +12,8 @@
    ============================== */
 window#waybar {
     background-color: rgba(0, 0, 0, 0.4);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* border-top-right-radius: 12px; */
+    /* border-bottom-right-radius: 12px; */
     color: #ffffff;
 }
 
@@ -32,7 +31,7 @@ window#waybar {
 #clock, 
 #custom-menu,
 #custom-power {
-    min-width: 30px;
+    min-width: 25px;
     margin: 12px 0;
     padding: 0;
 }
@@ -41,7 +40,7 @@ window#waybar {
    Custom Menu
    ============================== */
 #custom-menu {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 /* ==============================
@@ -52,7 +51,7 @@ window#waybar {
 #custom-spotify {
     font-family: "JetBrainsMono Nerd Font";
     font-size: 30px;
-    min-height: 30px;
+    min-height: 25px;
 }
 
 /* ==============================

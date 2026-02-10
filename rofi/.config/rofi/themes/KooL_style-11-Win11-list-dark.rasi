@@ -14,9 +14,9 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-  bg0    : black/100%;
-  bg1    : black/60%;
-  bg2    : black/40%;
+  bg0    : black/60%;
+  bg1    : black/30%;
+  bg2    : black/10%;
   bg3    : gray/20%;
   fg0    : #ffffff;
   fg1    : #cecece;
@@ -38,17 +38,17 @@ element-icon, element-text, scrollbar {
 
 window {
   location : south;
-  width    : 80%;
-  height   : 80%;
-  y-offset : -10px;
+  width    : 60%;
+  height   : 60%;
+  y-offset : -80px;
 
   background-color : @bg1;
-  border-radius    : 8px;
+  border-radius    : 12px;
 }
 
 mainbox {
-  padding : 24px;
-  spacing : 24px;
+  padding : 20px;
+  spacing : 20px;
 }
 
 inputbar {
