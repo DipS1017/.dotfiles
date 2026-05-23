@@ -1,4 +1,4 @@
-return {
+--[[ return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -16,7 +16,7 @@ return {
       vim.cmd("colorscheme tokyonight-night")
     end,
   },
-}
+} ]]
 --[[ return {
   "EdenEast/nightfox.nvim",
   config = function()
@@ -41,7 +41,7 @@ return {
   },
 }
  ]]
---[[ return {
+return {
   "rebelot/kanagawa.nvim",
   config = function()
     require("kanagawa").setup({
@@ -53,7 +53,7 @@ return {
         keywordstyle = { italic = true },
         statementstyle = { bold = true },
         typestyle = {},
-        transparent = false,   -- do not set background color
+        transparent = true,    -- do not set background color
         diminactive = false,   -- dim inactive window `:h hl-normalnc`
         terminalcolors = true, -- define vim.g.terminal_color_{0,17}
         colors = {             -- add/modify theme and palette colors
@@ -73,7 +73,7 @@ return {
     -- setup must be called before loading
     vim.cmd("colorscheme kanagawa")
   end,
-} ]]
+}
 --
 --[[ return {
   {
@@ -165,20 +165,20 @@ return {
   },
 } ]]
 --[[ return {
-	{
-		"maxmx03/fluoromachine.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			local fm = require("fluoromachine")
+  {
+    "maxmx03/fluoromachine.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      local fm = require("fluoromachine")
 
-			fm.setup({
-				glow = false,
-				theme = "fluoromachine",
-				transparent = true,
-			})
+      fm.setup({
+        glow = false,
+        theme = "fluoromachine",
+        transparent = true,
+      })
 
-			vim.cmd.colorscheme("fluoromachine")
-		end,
-	},
+      vim.cmd.colorscheme("fluoromachine")
+    end,
+  },
 } ]]

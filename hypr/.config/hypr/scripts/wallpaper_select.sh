@@ -3,6 +3,7 @@
 # Configuration
 wallDIR="/home/dips/Pictures/wallpapers"
 confFile="$HOME/.config/hypr/hyprpaper.conf"
+swaylockConf="$HOME/.config/swaylock/config"
 
 # Rofi Grid Style
 rofi_style="element { orientation: vertical; padding: 20px; } element-icon { size: 150px; } element-text { horizontal-align: 0.5; } listview { columns: 4; lines: 2; }"
@@ -25,6 +26,9 @@ sed -i "s|preload = .*|preload = $full_path|" "$confFile"
 
 # Update all 'path =' lines inside the wallpaper blocks
 sed -i "s|path = .*|path = $full_path|" "$confFile"
+
+# Sync swaylock background
+[ -f "$swaylockConf" ] && sed -i "s|^image=.*|image=$full_path|" "$swaylockConf"
 
 # 4. Apply Changes Instantly
 # Preload the new image

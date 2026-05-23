@@ -1,13 +1,25 @@
 {
-  "currentThemeName": "monochrome",
-  "currentThemeCategory": "generic",
-  "customThemeFile": "",
-  "registryThemeVariants": {},
+  "currentThemeName": "custom",
+  "currentThemeCategory": "registry",
+  "customThemeFile": "/home/dips/.config/DankMaterialShell/themes/oxocarbon/theme.json",
+  "registryThemeVariants": {
+    "rosePine": "rosePine",
+    "amoledBlack": {
+      "flavor": "black",
+      "accent": "greenyellow"
+    },
+    "gruvboxMaterial": "soft",
+    "gruvboxMulti": {
+      "flavor": "material-hard-dark",
+      "accent": "green"
+    },
+    "oxocarbon": "blue"
+  },
   "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
-  "dockTransparency": 0,
+  "dockTransparency": 0.85,
   "widgetBackgroundColor": "sc",
   "widgetColorMode": "colorful",
   "controlCenterTileColorMode": "primary",
@@ -28,9 +40,9 @@
   "useFahrenheit": false,
   "windSpeedUnit": "kmh",
   "nightModeEnabled": false,
-  "animationSpeed": 1,
+  "animationSpeed": 2,
   "customAnimationDuration": 500,
-  "syncComponentAnimationSpeeds": true,
+  "syncComponentAnimationSpeeds": false,
   "popoutAnimationSpeed": 1,
   "popoutCustomAnimationDuration": 150,
   "modalAnimationSpeed": 1,
@@ -117,15 +129,15 @@
   ],
   "showWorkspaceIndex": true,
   "showWorkspaceName": false,
-  "showWorkspacePadding": true,
+  "showWorkspacePadding": false,
   "workspaceScrolling": false,
-  "showWorkspaceApps": false,
+  "showWorkspaceApps": true,
   "workspaceDragReorder": true,
   "maxWorkspaceIcons": 1,
   "workspaceAppIconSizeOffset": 0,
   "groupWorkspaceApps": false,
   "workspaceFollowFocus": true,
-  "showOccupiedWorkspacesOnly": false,
+  "showOccupiedWorkspacesOnly": true,
   "reverseScrolling": false,
   "dwlShowAllTags": false,
   "workspaceColorMode": "default",
@@ -171,7 +183,9 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
-  "spotlightSectionViewModes": {},
+  "spotlightSectionViewModes": {
+    "apps": "list"
+  },
   "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
   "dankLauncherV2Size": "compact",
@@ -181,11 +195,11 @@
   "dankLauncherV2ShowFooter": true,
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "auto",
-  "iconTheme": "System Default",
+  "networkPreference": "wifi",
+  "iconTheme": "Papirus",
   "cursorSettings": {
     "theme": "System Default",
-    "size": 20,
+    "size": 24,
     "niri": {
       "hideWhenTyping": false,
       "hideAfterInactiveMs": 0
@@ -206,8 +220,8 @@
   "launcherLogoBrightness": 0.5,
   "launcherLogoContrast": 1,
   "launcherLogoSizeOffset": 0,
-  "fontFamily": "Inter Variable",
-  "monoFontFamily": "Fira Code",
+  "fontFamily": "Adwaita Sans",
+  "monoFontFamily": "Adwaita Mono",
   "fontWeight": 400,
   "fontScale": 1,
   "notepadUseMonospace": true,
@@ -273,7 +287,7 @@
   "showDock": false,
   "dockAutoHide": true,
   "dockSmartAutoHide": false,
-  "dockGroupByApp": false,
+  "dockGroupByApp": true,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
   "dockSpacing": 4,
@@ -387,13 +401,13 @@
           "size": 20
         },
         {
-          "id": "clock",
+          "id": "workspaceSwitcher",
           "enabled": true
         }
       ],
       "centerWidgets": [
         {
-          "id": "workspaceSwitcher",
+          "id": "clock",
           "enabled": true
         }
       ],
@@ -434,15 +448,15 @@
           "enabled": true
         }
       ],
-      "spacing": 4,
-      "innerPadding": 0,
+      "spacing": 0,
+      "innerPadding": 4,
       "bottomGap": 0,
       "transparency": 1,
-      "widgetTransparency": 0,
-      "squareCorners": false,
+      "widgetTransparency": 1,
+      "squareCorners": true,
       "noBackground": false,
-      "gothCornersEnabled": false,
-      "gothCornerRadiusOverride": false,
+      "gothCornersEnabled": true,
+      "gothCornerRadiusOverride": true,
       "gothCornerRadiusValue": 12,
       "borderEnabled": false,
       "borderColor": "surfaceText",
@@ -458,8 +472,8 @@
       "showOnWindowsOpen": false,
       "openOnOverview": false,
       "visible": true,
-      "popupGapsAuto": true,
-      "popupGapsManual": 5,
+      "popupGapsAuto": false,
+      "popupGapsManual": 4,
       "maximizeDetection": true,
       "scrollEnabled": true,
       "scrollXBehavior": "column",
@@ -540,40 +554,7 @@
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
-  "desktopWidgetInstances": [
-    {
-      "id": "dw_1770783809207_688lg3cmg",
-      "widgetType": "desktopClock",
-      "name": "Desktop Clock",
-      "enabled": false,
-      "config": {
-        "style": "analog",
-        "transparency": 0.8,
-        "colorMode": "primary",
-        "customColor": "#ffffff",
-        "showDate": true,
-        "showAnalogNumbers": false,
-        "showAnalogSeconds": true,
-        "displayPreferences": [
-          "all"
-        ]
-      },
-      "positions": {
-        "eDP-1": {
-          "width": 200,
-          "height": 200,
-          "x": 1299,
-          "y": 109
-        },
-        "HDMI-A-1": {
-          "width": 306,
-          "height": 306,
-          "x": 1610,
-          "y": 132
-        }
-      }
-    }
-  ],
+  "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {
     "dms_settings_search": {

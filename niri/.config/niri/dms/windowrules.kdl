@@ -34,3 +34,21 @@ window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
 }
+
+window-rules {
+
+    rule {
+        match app-id="slack"
+        open-on-workspace "chat"
+    }
+
+    rule {
+        match app-id="spotify"
+        open-on-workspace "music"
+    }
+
+    rule {
+        match app-id="discord"
+        open-on-workspace "social"
+    }
+}

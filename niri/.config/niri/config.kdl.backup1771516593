@@ -282,12 +282,6 @@ spawn-at-startup "spotify"
 spawn-at-startup "discord"
 spawn-at-startup "slack"
 
-spawn-at-startup "swayidle" "--wait" \
-  "timeout" "300" "dms ipc call lock lock" \
-  "timeout" "600" "niri msg action power-off-monitors" \
-  "timeout" "900" "systemctl suspend" \
-  "before-sleep" "dms ipc call lock lock"
-
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -658,5 +652,3 @@ include "dms/colors.kdl"
 include "dms/layout.kdl"
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
-
-include "dms/cursor.kdl"

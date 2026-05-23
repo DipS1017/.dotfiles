@@ -42,4 +42,23 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true {
        spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
     }
+
+  // custom controls
+  //firefox open
+    Mod+b {
+        spawn "firefox";
+    }
+
+  // open file manager
+    Mod+e {
+        spawn "thunar";
+    }
+
+
+Mod+C { focus-workspace "ws-chat"; }
+Mod+D { focus-workspace "ws-social"; }
+Mod+S { focus-workspace "ws-music"; }
+
+
+
 }
