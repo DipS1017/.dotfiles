@@ -1,0 +1,47 @@
+// Named workspaces + app placement and styling (previously managed by DMS).
+
+// Draw the focus ring / border *around* windows instead of as a solid
+// rectangle behind them. Without this, the focus-ring background bleeds
+// through semi-transparent windows (e.g. foot with alpha < 1).
+window-rule {
+    draw-border-with-background false
+}
+
+// Pin all three to the main display (eDP-1) so they stay together and the
+// Mod+C/D/S switches always act on the primary monitor, not the external one.
+workspace "chat" {
+    open-on-output "eDP-1"
+}
+workspace "discord" {
+    open-on-output "eDP-1"
+}
+workspace "music" {
+    open-on-output "eDP-1"
+}
+
+// app-id matching is case-sensitive in niri (Slack reports "Slack", not "slack"),
+// so these use case-insensitive regex to be robust. open-maximized makes each app
+// fill its dedicated workspace instead of sitting at the default half width.
+window-rule {
+    match app-id=r#"(?i)^slack$"#
+    open-on-workspace "chat"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"(?i)^discord$"#
+    open-on-workspace "discord"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"(?i)^spotify$"#
+    open-on-workspace "music"
+    open-maximized true
+}
+
+// Slightly dim inactive windows.
+window-rule {
+    match is-active=false
+    opacity 0.9
+}

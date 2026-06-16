@@ -277,16 +277,21 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 //spawn-at-startup "waybar"
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
+// Start the Noctalia shell (bar, launcher, notifications, lock screen, etc.).
+spawn-at-startup "qs" "-c" "noctalia-shell"
+
 spawn-at-startup "spotify"
-spawn-at-startup "discord"
+// Run Discord on native Wayland so it honors the display's fractional scale.
+// Without this it renders on XWayland at native resolution -> tiny/zoomed-out UI.
+// (Verified: this flag connects Discord to the Wayland socket at screen_density 1.5.)
+spawn-at-startup "discord" "--ozone-platform-hint=auto"
 spawn-at-startup "slack"
 
 spawn-at-startup "swayidle" "--wait" \
-  "timeout" "300" "dms ipc call lock lock" \
+  "timeout" "300" "qs -c noctalia-shell ipc call lockScreen lock" \
   "timeout" "600" "niri msg action power-off-monitors" \
   "timeout" "900" "systemctl suspend" \
-  "before-sleep" "dms ipc call lock lock"
+  "before-sleep" "qs -c noctalia-shell ipc call lockScreen lock"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -653,10 +658,7 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
 
-include "dms/outputs.kdl"
-include "dms/colors.kdl"
-include "dms/layout.kdl"
-include "dms/alttab.kdl"
-include "dms/binds.kdl"
-
-include "dms/cursor.kdl"
+include "monitors.kdl"
+include "cursor.kdl"
+include "windowrules.kdl"
+include "binds.kdl"

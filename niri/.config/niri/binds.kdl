@@ -1,0 +1,36 @@
+// Custom keybinds: Noctalia shell IPC + app launchers + named workspaces.
+// This file is included AFTER the main `binds` block in config.kdl. niri merges
+// `binds` blocks across includes, and the later one wins for duplicate keys, so
+// these override the niri defaults (the same mechanism the old DMS config used).
+//
+// Noctalia IPC is invoked via: qs -c noctalia-shell ipc call <target> <function>
+binds {
+    // --- Noctalia shell ---
+    Mod+Space hotkey-overlay-title="Application Launcher" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle";
+    }
+    Mod+V hotkey-overlay-title="Clipboard History" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";
+    }
+    Mod+N hotkey-overlay-title="Notification Center" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
+    }
+    Mod+Comma hotkey-overlay-title="Settings" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle";
+    }
+    Mod+Y hotkey-overlay-title="Wallpaper Selector" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle";
+    }
+    Mod+Alt+L hotkey-overlay-title="Lock Screen" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+    }
+
+    // --- App launchers ---
+    Mod+B hotkey-overlay-title="Firefox" { spawn "firefox"; }
+    Mod+E hotkey-overlay-title="File Manager" { spawn "thunar"; }
+
+    // --- Named workspaces ---
+    Mod+C { focus-workspace "chat"; }
+    Mod+D { focus-workspace "discord"; }
+    Mod+S { focus-workspace "music"; }
+}
