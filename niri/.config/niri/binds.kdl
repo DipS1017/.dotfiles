@@ -1,36 +1,51 @@
-// Custom keybinds: Noctalia shell IPC + app launchers + named workspaces.
-// This file is included AFTER the main `binds` block in config.kdl. niri merges
-// `binds` blocks across includes, and the later one wins for duplicate keys, so
-// these override the niri defaults (the same mechanism the old DMS config used).
+// Custom keybinds: Noctalia shell IPC, app launchers, and named app workspaces.
+// Included AFTER the main `binds` block in config.kdl, so these override niri's
+// defaults for duplicate keys (niri merges binds across includes; later wins).
 //
-// Noctalia IPC is invoked via: qs -c noctalia-shell ipc call <target> <function>
+// General workspaces 1-4 use the default Mod+1..Mod+4 (index) binds.
+// App workspaces are reached by letter:
+//   Mod+C -> chat (Slack, index 5)   Mod+D -> discord (6)
+//   Mod+Shift+<letter> moves the focused window to that workspace.
+//
+// Noctalia 5 is a single binary; IPC is invoked via: noctalia msg <command> [args]
 binds {
     // --- Noctalia shell ---
     Mod+Space hotkey-overlay-title="Application Launcher" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle";
+        spawn "noctalia" "msg" "panel-toggle" "launcher";
     }
     Mod+V hotkey-overlay-title="Clipboard History" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";
+        spawn "noctalia" "msg" "panel-toggle" "clipboard";
     }
     Mod+N hotkey-overlay-title="Notification Center" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
+        spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications";
     }
     Mod+Comma hotkey-overlay-title="Settings" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle";
+        spawn "noctalia" "msg" "settings-toggle";
     }
     Mod+Y hotkey-overlay-title="Wallpaper Selector" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle";
+        spawn "noctalia" "msg" "panel-toggle" "wallpaper";
     }
     Mod+Alt+L hotkey-overlay-title="Lock Screen" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+        spawn "noctalia" "msg" "session" "lock";
     }
 
     // --- App launchers ---
     Mod+B hotkey-overlay-title="Firefox" { spawn "firefox"; }
     Mod+E hotkey-overlay-title="File Manager" { spawn "thunar"; }
 
-    // --- Named workspaces ---
-    Mod+C { focus-workspace "chat"; }
-    Mod+D { focus-workspace "discord"; }
-    Mod+S { focus-workspace "music"; }
+    // --- Window actions ---
+    Mod+Shift+Space { toggle-window-floating; }   // float / unfloat the focused window
+
+    // --- Focus app workspaces ---
+    // (music workspace is index 7 -> reach it with Mod+7; move there with Mod+Ctrl+7)
+    Mod+C { focus-workspace "2"; }
+    Mod+D { focus-workspace "3"; }
+
+    // --- Move focused window to an app workspace ---
+    Mod+Shift+C { move-column-to-workspace "chat"; }
+    Mod+Shift+D { move-column-to-workspace "discord"; }
+
+    // --- Screenshots ---
+    Mod+S { screenshot; }               // interactive: select a region or window
+    Mod+Shift+S { screenshot-screen; }  // capture the whole screen
 }

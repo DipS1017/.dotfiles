@@ -1,7 +1,7 @@
 // Monitor configuration (previously managed by DMS, now maintained manually).
 output "eDP-1" {
     mode "2560x1600@60.000"
-    scale 1.5
+    scale 1.6
     position x=0 y=166
 }
 

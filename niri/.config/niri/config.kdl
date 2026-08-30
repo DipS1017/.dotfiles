@@ -10,7 +10,7 @@ prefer-no-csd
 input {
     keyboard {
 
-            repeat-delay 200
+            repeat-delay 175
             repeat-rate 35
   
         xkb {
@@ -204,7 +204,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
+        width 2
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -278,20 +278,19 @@ layout {
 //spawn-at-startup "waybar"
 
 // Start the Noctalia shell (bar, launcher, notifications, lock screen, etc.).
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia" "--daemon"
 
-spawn-at-startup "spotify"
-// Run Discord on native Wayland so it honors the display's fractional scale.
-// Without this it renders on XWayland at native resolution -> tiny/zoomed-out UI.
-// (Verified: this flag connects Discord to the Wayland socket at screen_density 1.5.)
-spawn-at-startup "discord" "--ozone-platform-hint=auto"
+// Discord and Spotify are NOT auto-started; launch them manually from the app
+// launcher. Their open-on-workspace rules still send them to discord/music.
+// (Discord's Wayland scaling flag lives in ~/.local/share/applications/discord.desktop,
+// so manual launches still scale correctly.)
 spawn-at-startup "slack"
 
 spawn-at-startup "swayidle" "--wait" \
-  "timeout" "300" "qs -c noctalia-shell ipc call lockScreen lock" \
+  "timeout" "300" "noctalia msg session lock" \
   "timeout" "600" "niri msg action power-off-monitors" \
   "timeout" "900" "systemctl suspend" \
-  "before-sleep" "qs -c noctalia-shell ipc call lockScreen lock"
+  "before-sleep" "noctalia msg session lock"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -330,7 +329,7 @@ animations {
 // Window rules let you adjust behavior for individual windows.
 
 window-rule {
-    open-maximized false
+    open-maximized true 
 }
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
@@ -656,6 +655,10 @@ binds {
 }
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
+    // Make Qt apps (noctalia/quickshell) use qt6ct -> Papirus icon theme.
+    // Without this, Qt falls back to a near-empty icon set and many app/tray
+    // icons go missing.
+    QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
 include "monitors.kdl"
